@@ -1,21 +1,26 @@
-function createColumn(size) {
-    for (var i = 0; i < size; i++) {
-        let newDiv = document.createElement("div");
-        newDiv.classList.add("column");
-        newDiv.style.width = 600 / size + "px";
-        document.getElementById("grid-container").appendChild(newDiv);
-        createRow(size);
+function createGrid(size) {
+    const container = document.getElementById("grid-container")
+
+    container.style.display = "flex";
+    container.style.width = "600px";
+    container.style.height = "600px";
+    container.style.backgroundColor = "grey";
+    container.style.border = "15px solid red";
+    container.style.borderRadius = "15px";
+    container.style.overflow = "hidden";
+
+    for (let i = 0; i < size; i++) {
+        let column = document.createElement("div");
+        column.classList.add("column");
+
+        for (let j = 0; j < size; j++) {
+            let cell = document.createElement("div");
+            cell.classList.add("cell-row");
+            column.appendChild(cell);
+        }
+
+        container.appendChild(column);
     }
 }
 
-function createRow(size) {
-    for (var j = 0; j < size; j++) {
-        let newRow = document.createElement("div");
-        newRow.classList.add("cell-row"); 
-        newRow.style.height = 600 / size + "px";
-        let columns = document.querySelectorAll(".column");
-        columns[j-1].appendChild(newRow);
-    }
-}
-
-createColumn(16); 
+createGrid(16);
