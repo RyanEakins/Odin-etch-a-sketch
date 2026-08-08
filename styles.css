@@ -1,0 +1,20 @@
+#grid-container {
+    display: flex;
+    width: 600px;
+    height: 600px;
+    background-color: grey;
+    border: 15px solid red;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.cell-row {
+    flex: 1;
+    border: 1px solid black;
+}
