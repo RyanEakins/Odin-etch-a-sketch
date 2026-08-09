@@ -8,6 +8,7 @@ const colors = {
     black: "my-color-class"
 };
 
+//Create 16x16 Grid for Function with Container
 function createGrid(size) {
     const container = document.getElementById("grid-container")
 
@@ -31,3 +32,29 @@ function createGrid(size) {
 }
 
 createGrid(16);
+
+//Add Reset Button to Screen
+btnReset.classList.add("reset");
+btnReset.textContent = "Reset";
+
+//Event Listener for Reset Button
+btnReset.addEventListener("click", () => {
+    createGrid.forEach((size) => {
+        size.style.backgroundColor = "grey";
+    });
+});
+
+createGrid(16);
+
+//Choose Number of Squares
+let numberButton = document.getElementById("prompt");
+numberButton.addEventListener("click", () => {
+    let enterNumber;
+    while (isNaN(enterNumber) || enterNumber > 100 || enterNumber < 0) {
+        enterNumber = Number(window.prompt("Choose a number between 0 and 100"));
+    }
+
+    //Clear Squares
+    container.innerHTML = "";
+    createGrid(enterNumber);
+});
