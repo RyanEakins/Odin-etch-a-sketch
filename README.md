@@ -22,4 +22,4 @@ Authors and acknowledgement: Completed by Ryan Eakins, for The Odin Project
 
 License: Open source
 
-Project Status: Currently in progress developing. 
+Project Status: Currently in progress developing. Updated as of August 9th, 2026. 

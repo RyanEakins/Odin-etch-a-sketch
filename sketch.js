@@ -1,3 +1,13 @@
+const btnBlack = document.getElementById("black");
+const btnReset = document.getElementById("reset");
+const btnPrompt = document.getElementById("prompt");
+
+let currentColor = 'black';
+
+const colors = {
+    black: "my-color-class"
+};
+
 function createGrid(size) {
     const container = document.getElementById("grid-container")
 
@@ -8,6 +18,11 @@ function createGrid(size) {
         for (let j = 0; j < size; j++) {
             let cell = document.createElement("div");
             cell.classList.add("cell-row");
+
+            cell.addEventListener('mouseover', e => {
+                e.target.classList.add(colors[currentColor]);
+            });
+        
             column.appendChild(cell);
         }
 
