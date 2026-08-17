@@ -4,19 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ryan's Etch-A-Sketch</title>
-    <link rel="stylesheet" href = "styles.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <section>
-        <div class="buttons">
-            <button id="black">Black</button>
-            <button id="prompt"># of Squares</button>
-            <button id="reset">Reset</button>
+        <div class="main-container">
+            <button id="clearButton">Clear</button>
+            <button id="gridButton">New Grid</button>
+        </div>
+
+        <div class="brush-container">
+            <button id="black-Brush">Black</button>
+            <button id="colorful-Brush">Rainbow</button>
+        </div>
+
+        <div id="sketch-pad-container">
+            <div id="sketch-pad"></div>
         </div>
     </section>
-    <section>
-        <div id="grid-container"></div>
-    </section>
+
+    <script src="sketch.js"></script>
 </body>
-<script src=sketch.js></script>
 </html>
